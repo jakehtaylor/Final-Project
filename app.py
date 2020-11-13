@@ -35,7 +35,8 @@ def predict():
     if request.method == 'POST':
         filename = "Test_Score_LR_v2.pkl"
         model = pickle.load(open(filename, 'rb'))
-
+        
+        '''
 
         X = []
         indices = []
@@ -117,9 +118,11 @@ def predict():
         
 
         print(indices)
+        
+         '''
 
 
-        return (render_template('Predict.html', pass_= prediction[0], fail_= prediction[1], inds=indices))
+        return (render_template('Predict.html')
 
 
 if __name__ == '__main__':
