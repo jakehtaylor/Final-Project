@@ -33,8 +33,6 @@ def predict():
         return(render_template('Predict.html', pass_='none', fail_='none', inds=[0,0,1,0,0,0,0,0]))
 
     if request.method == 'POST':
-        filename = "Test_Score_LR_v2.pkl"
-        model = pickle.load(open(filename, 'rb'))
 
         return (render_template('Predict.html', pass_='flex'))
 
