@@ -36,8 +36,7 @@ def predict():
         filename = "Test_Score_LR_v2.pkl"
         model = pickle.load(open(filename, 'rb'))
 
-        return (render_template('Predict.html', pass_='flex')
-
+        return (render_template('Predict.html', pass_='flex'))
 
 if __name__ == '__main__':
     app.run()
