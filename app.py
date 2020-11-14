@@ -3,6 +3,12 @@ import numpy as np
 
 app = Flask(__name__)
 
+
+ 
+import pickle
+filename = "Test_Score_LR_v2.pkl"
+model = pickle.load(open(filename, 'rb'))
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -27,15 +33,10 @@ def research():
 @app.route('/Predict', methods=['GET', 'POST'])
 def predict():
 
-    
     if request.method == 'GET':
         return(render_template('Predict.html', pass_='none', fail_='none', inds=[0,0,1,0,0,0,0,0]))
 
     if request.method == 'POST':
-        
-        import pickle
-        filename = "Test_Score_LR_v2.pkl"
-        model = pickle.load(open(filename, 'rb'))
         return (render_template('Predict.html', pass_='flex', fail_='none'))
 
 if __name__ == '__main__':
